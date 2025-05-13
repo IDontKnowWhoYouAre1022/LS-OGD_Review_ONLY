@@ -36,7 +36,7 @@ The main components of this repository are organized as follows:
 ## Setup and Installation
 
 1.  **Clone the repository (if applicable for reviewers, or indicate files are provided directly).**
-2.  **Python Environment:** Using a Python environment (e.g., Conda or venv) is recommended. The code is developed with Python 3.8+.
+2.  **Python Environment:** A Python environment (e.g., Conda or venv) is recommended. The code is developed with Python 3.8+.
 3.  **Install Dependencies:** Install the required Python packages. Key dependencies include:
     * `torch` (PyTorch)
     * `transformers` (Hugging Face Transformers)
@@ -57,7 +57,7 @@ The main components of this repository are organized as follows:
 
 1.  **Prepare the Dataset:**
     * The experiments are designed to use the M3A dataset.
-    * Ensure the dataset (e.g., `combined_data.csv`) is placed in the directory specified by `data_root` and `dataset_folder_name` in your configuration file (e.g., `D_42.yaml`). The default is `data_root: "/blue/woodard/share/adversarialAI/datasets"` and `dataset_folder_name: "M3A"`.
+    * Ensure the dataset (e.g., `combined_data.csv`) is placed in the directory specified by `data_root` and `dataset_folder_name` in your configuration file (e.g., `D_42.yaml`). The default is `data_root: "your_data_root_here"` and `dataset_folder_name: "M3A"`.
 
 2.  **Configure Your Experiment:**
     * Modify an existing `.yaml` configuration file (like `D_42.yaml`) or create a new one to set your desired parameters for the dataset, model, drift, controller, and training.
@@ -76,7 +76,7 @@ The main components of this repository are organized as follows:
     * Load the data and split it into Phase 1 (initial training) and Phase 2 (drift/adaptation).
     * Train the initial model in Phase 1 (or load a pre-trained Phase 1 model if available and not forced to retrain).
     * In Phase 2:
-        * Evaluate a static baseline model (Phase 1 model without adaptation) on the drifted data.
+        * Evaluate a static baseline model (Phase 1 without adaptation) on the drifted data.
         * Run the LS-OGD model, allowing it to adapt to the concept drift using the configured controller.
     * Log metrics and save results.
 
@@ -100,4 +100,4 @@ The script generates several outputs, saved in the directory specified by `save_
     * Cumulative Controller Cost
 
 ## Notes for Reviewers
-This repository is provided for anonymous peer review. The code implements the LS-OGD framework and the experimental setup described in the submitted paper. Configuration files allow for the reproducing of the reported experiments and the exploration of different settings.
+This repository is provided for anonymous peer review. The code implements the LS-OGD framework and the experimental setup described in the submitted paper. Configuration files allow for the reproduction of the reported experiments and the exploration of different settings.
