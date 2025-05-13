@@ -19,8 +19,8 @@ The main components of this repository are organized as follows:
 
 * `main_D.py`: The primary script to run the experiments. It handles data splitting, model initialization, training (Phase 1), concept drift simulation, adaptation (Phase 2 with LS-OGD controller), and evaluation against a static baseline.
 * `model.py`: Defines the neural network architectures used, including:
-    * `TextEncoder`: Encodes textual input (e.g., using CLIPTextModel).
-    * `ImageEncoder`: Encodes visual input (e.g., using CLIPVisionModel).
+    * `TextEncoder`: Encodes textual input (e.g., using CLIPTextModel[1]).
+    * `ImageEncoder`: Encodes visual input (e.g., using CLIPVisionModel[1]).
     * `Fusion`: Implements the fusion strategy (e.g., `WeightedAverage`) to combine outputs from text and image encoders, which includes the adaptable fusion parameter $\alpha_t$.
 * `data_utils.py`: Contains utilities for data loading and processing.
     * `LabeledDataset`: Loads labeled data and applies configured concept drifts (image degradation, text semantic shift) on-the-fly during Phase 2.
@@ -100,4 +100,7 @@ The script generates several outputs, saved in the directory specified by `save_
     * Cumulative Controller Cost
 
 ## Notes for Reviewers
-This repository is provided for anonymous peer review. The code implements the LS-OGD framework and the experimental setup described in the submitted paper. Configuration files allow for the reproduction of the reported experiments and the exploration of different settings.
+This repository is provided for anonymous peer review. The code implements the LS-OGD framework and the experimental setup described in the submitted paper. Configuration files allow for reproducing the reported experiments and exploring different settings.
+
+## Reference
+[1] Radford, Alec, et al. "Learning transferable visual models from natural language supervision." International conference on machine learning. PmLR, 2021.
