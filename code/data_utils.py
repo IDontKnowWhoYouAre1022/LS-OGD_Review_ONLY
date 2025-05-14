@@ -333,10 +333,6 @@ class LabeledDataset(Dataset):
 
 
 class UnlabeledDataset(Dataset):
-    """
-    Minimal UnlabeledDataset, also accepts an initial_df.
-    Focus of the minimal experiment is on LabeledDataset adaptation.
-    """
     def __init__(
         self,
         config: Dict[str, Any],
