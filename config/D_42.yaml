@@ -57,7 +57,7 @@ force_retrain_phase1:  False   # set true if you want to ignore any existing pha
 
 # ─── Controller Parameters ────────────────────────────────────────────────
 controller_acc_history_len:     100
-controller_drift_window:        95
+controller_drift_window:        100
 controller_drift_sig_drop:     0.02
 controller_drift_comp_ratio:   0.50
 controller_rule_high_drift_signal_threshold:     0.70
